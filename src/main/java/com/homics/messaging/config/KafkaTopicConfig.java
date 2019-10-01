@@ -9,7 +9,7 @@ import org.springframework.kafka.core.KafkaAdmin;
 import java.util.HashMap;
 import java.util.Map;
 
-import static com.homics.messaging.config.KafkaConfig.BOOTSRTAP_SERVER;
+import static com.homics.messaging.config.KafkaConfig.BOOTSTRAP_SERVER;
 
 @Configuration
 public class KafkaTopicConfig {
@@ -21,7 +21,7 @@ public class KafkaTopicConfig {
     @Bean
     public KafkaAdmin kafkaAdmin() {
         Map<String, Object> configs = new HashMap<>();
-        configs.put(AdminClientConfig.BOOTSTRAP_SERVERS_CONFIG, BOOTSRTAP_SERVER);
+        configs.put(AdminClientConfig.BOOTSTRAP_SERVERS_CONFIG, BOOTSTRAP_SERVER);
         return new KafkaAdmin(configs);
     }
 
